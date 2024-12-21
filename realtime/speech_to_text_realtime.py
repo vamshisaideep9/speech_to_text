@@ -52,7 +52,7 @@ async def transcribe_audio():
             session_event = {
                 "type": "session.update",
                 "session": {
-                    "modalities": ["audio", "text"],
+                    "modalities": [ "text"],
                     "input_audio_format": "pcm16",
                     "output_audio_format": "pcm16",
                     "input_audio_transcription": {
@@ -103,11 +103,11 @@ asyncio.run(transcribe_audio())
 """
 RealTime api mainly focuses on speech to speech/ text to speech/ text to text
 
-1. using Realtime api, It cannot convert to text from the audio directly from mic.
+1. using Realtime api, It cannot convert to text from the audio directly from mic.  ---- It is possible, test it now
 2. converting from speech to text:
-   a. The audio from the mic should be stored in files (.wav)
+   a. The audio from the mic should be stored in files (.wav) - 
    b. Then, we can convert that speech to text using whisper-1
-   c. Even whisper-1 does not accept audio from mic.
+   c. Even whisper-1 does not accept audio from mic. - Use realtime-whisper
 
 
 
